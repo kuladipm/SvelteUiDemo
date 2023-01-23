@@ -1,4 +1,4 @@
 <script>
-  import Todo from './component/Todo.svelte'
+  import TodoApp from "./component/TodoApp.svelte";
 </script>
-<Todo/>
+<TodoApp/>

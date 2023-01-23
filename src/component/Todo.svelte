@@ -1,4 +1,6 @@
+
 <script>
+  //this todo code is  without optimization 
   import "iconify-icon";
   let status = false;
   let count = 0;
@@ -39,10 +41,10 @@
   let showDataAfterSearch = [];
   const showDataBasedOnDate = () => {
     //console.log(todoItemList)
-    let data = todoItemList.filter((date) => date.date === searchDate);
-    console.log(data);
-    if (data.length !== 0) {
-      showDataAfterSearch = data;
+    let filteredData = todoItemList.filter((date) => date.date === searchDate);
+    console.log(filteredData);
+    if (filteredData.length !== 0) {
+      showDataAfterSearch = filteredData;
     } else {
       alert("no task on that day");
     }
@@ -108,6 +110,50 @@
       placeholder="enter date for search"
     /><button id="searchBtn" on:click={showDataBasedOnDate}>search</button>
   </div>
+  {#if searchDate !== ""}
+    <h4>Task on {searchDate}</h4>
+  {/if}
+  {#each showDataAfterSearch as item, i}
+    {#if searchDate !== ""}
+      <div class="card" style="border-radius: 6px;">
+        <div
+          class="card-body"
+          style="background-color: azure;border-radius: 6px;"
+        >
+          <div class="row">
+            <div class:checked={item.status} class="column">
+              <input type="checkbox" class="checkBox" bind:checked={status} />
+            </div>
+            <div class:checked={status} class="columnInput1">
+              {item.Title}
+            </div>
+            <div
+              class:checked={showDataAfterSearch.status}
+              class="columnInput2"
+            >
+              {item.date}
+            </div>
+            <!-- svelte-ignore a11y-click-events-have-key-events -->
+            <div
+              class="columnDelete"
+              on:click={() => {
+                deleteItem(i);
+              }}
+            >
+              <iconify-icon
+                icon="material-symbols:delete"
+                style="color: red;"
+                width="18"
+                height="18"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      {:else}
+      <h1>no data on that day</h1>
+    {/if}
+  {/each}
   <div class="sub-container1">
     <button on:click={allTodo} class="displayAllBtn">Show All</button>
     <button on:click={completeItem} class="completeBtn">Complete</button>
@@ -221,48 +267,7 @@
       </div>
     {/if}
   {/each}
-  {#if searchDate !== ""}
-    <h4>Task on {searchDate}</h4>
-  {/if}
-  {#each showDataAfterSearch as item, i}
-    {#if searchDate !== ""}
-      <div class="card" style="border-radius: 6px;">
-        <div
-          class="card-body"
-          style="background-color: azure;border-radius: 6px;"
-        >
-          <div class="row">
-            <div class:checked={item.status} class="column">
-              <input type="checkbox" class="checkBox" bind:checked={status} />
-            </div>
-            <div class:checked={status} class="columnInput1">
-              {item.Title}
-            </div>
-            <div
-              class:checked={showDataAfterSearch.status}
-              class="columnInput2"
-            >
-              {item.date}
-            </div>
-            <!-- svelte-ignore a11y-click-events-have-key-events -->
-            <div
-              class="columnDelete"
-              on:click={() => {
-                deleteItem(i);
-              }}
-            >
-              <iconify-icon
-                icon="material-symbols:delete"
-                style="color: red;"
-                width="18"
-                height="18"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    {/if}
-  {/each}
+  
 </div>
 
 <!-- css -->

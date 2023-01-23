@@ -61,3 +61,110 @@ button:not(:disabled):complete {
 button:focus {
 	border-color: #666;
 }
+/* file css */
+.completeBtn,
+.activeBtn,
+.displayAllBtn {
+  border-radius: 3px;
+  border: 1.3px solid black;
+  background-color: rgb(223, 223, 232);
+  width: 15.5%;
+  padding: 2px;
+  font-size: 90%;
+  margin: 1% 1%;
+  box-shadow: 1px 1px darkgrey;
+}
+.completeBtn:hover,
+.activeBtn:hover,
+.displayAllBtn:hover {
+  background-color: rgb(201, 201, 238);
+
+}
+.checked {
+    text-decoration: line-through;
+    opacity: 20%;
+  }
+  .sub-container {
+    background-color:#E1E8ED;
+    margin: 1% 32%;
+    border-radius: 6px;
+    border: 1px solid black;
+    color: black;
+    text-align: center;
+    padding: 5px;
+    box-shadow: 2px 2px white ;
+  }
+  .outPut-container{
+    background-color:#E1E8ED;
+    margin: 0% 32%;
+    border: 1px solid black;
+    color: black;
+    text-align: center;
+    box-shadow: 2px 2px white ;
+  }
+  .searchData {
+    border-radius: 3px;
+  border: 1.3px solid black;
+  background-color:white;
+  width: 30.5%;
+  padding: 5px;
+  font-size: 80%;
+  margin: 2% 1%;
+  text-align: center;
+  box-shadow: 2px 2px darkgrey;
+  }
+  .inputDiv {
+    width: 60%;
+    border-radius: 15px;
+  }
+  
+  .columnDelete:hover,
+  .checkBox:hover,
+  .dateInput {
+    cursor: pointer;
+  }
+  h5 {
+    color: brown;
+    width: 60%;
+    margin: 2% 21%;
+    padding: 1px;
+    text-align: center;
+  }
+  h6 {
+    display: block;
+    color: black;
+    width: fit-content;
+    margin: 0% 32%;
+    padding: 10px;
+  }
+  .input {
+    margin: 10px;
+    padding: 1%;
+    border: 0.5px solid black;
+    border-radius: 5px;
+    text-align: center;
+    border-radius: 5px;
+    width: 60%;
+  }
+  .dateInput {
+    margin: 1px;
+    padding: 1%;
+    border: 0.5px solid black;
+    border-radius: 5px;
+    text-align: left;
+    border-radius: 5px;
+    width: 26%;
+    background-color: ivory;
+  }
+
+  .card {
+    margin: 0.2% 12%;
+    font-size: 15px;
+    border-radius: 6px;
+    border: 0.2px solid black;
+    text-align: left;
+    display: flexbox;
+    flex-wrap: initial;
+    box-shadow: 2px 2px darkgrey;
+  }
+ 
